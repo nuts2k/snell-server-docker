@@ -1,0 +1,16 @@
+version: '3'
+services:
+  snell:
+    image: nuts2k/snell-server:v4.0.1
+    restart: always
+    container_name: snell
+    ports:
+      - "8488:8388"
+    volumes:
+      - /root/dockers/snell/conf:/etc/snell
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    external: true
